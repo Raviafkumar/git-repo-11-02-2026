@@ -5,5 +5,9 @@ jobs:
   dev:
     runs-on: ubuntu-latest
     steps:
-      - name: print greeting
-        run: echo "Hello"
+      - name: download source code
+        uses: actions/checkout@v4
+      - name: donwload databricks cli
+        run: curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+      - name: check dbx cli version
+        run:  databricks --version
