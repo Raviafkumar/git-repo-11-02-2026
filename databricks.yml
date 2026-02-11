@@ -3,8 +3,6 @@
 bundle:
   name: proj_dbx_10_02_2026
   uuid: c8b27408-e14b-4825-ada8-8443a291f5e1
-run_as:
-  user_name: ravi.af.kumar@gmail.com
 
 include:
   - resources/*.yml
@@ -24,7 +22,9 @@ targets:
       root_path: /Workspace/Shared/proj_dbx_10_02_2026
       file_path: /Workspace/Shared/proj_dbx_10_02_2026
 
-CAN_MANAGE: ravi.af.kumar@gmail.com   
+permissions:
+  - level: CAN_MANAGE
+    group_name: users
 
       
       
