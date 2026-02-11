@@ -1,0 +1,33 @@
+# This is a Databricks asset bundle definition for proj_dbx_10_02_2026.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+bundle:
+  name: proj_dbx_10_02_2026
+  uuid: c8b27408-e14b-4825-ada8-8443a291f5e1
+
+
+include:
+  - resources/*.yml
+  - resources/*/*.yml
+
+
+targets:
+  dev:
+    # The default target uses 'mode: development' to create a development copy.
+    # - Deployed resources get prefixed with '[dev my_user_name]'
+    # - Any job schedules and triggers are paused by default.
+    # See also https://docs.databricks.com/dev-tools/bundles/deployment-modes.html.
+    mode: production
+    default: true
+    workspace:
+      host: https://dbc-137322c2-693c.cloud.databricks.com
+      root_path: /Workspace/Shared/proj_dbx_10_02_2026
+      file_path: /Workspace/Shared/proj_dbx_10_02_2026
+
+CAN_MANAGE: ravi.af.kumar@gmail.com   
+
+      
+      
+
+      
+          
+
