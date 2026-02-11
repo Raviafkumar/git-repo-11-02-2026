@@ -11,3 +11,11 @@ jobs:
         run: curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
       - name: check dbx cli version
         run:  databricks --version
+      - name: create dbx config file
+        run:  cat <<EOF >.databrickscfg
+              [DEFAULT]
+              host  = https://dbc-137322c2-693c.cloud.databricks.com/
+              token = dapib06dfed29cd4687f07b7f5833a4191d8
+              EOF
+       - name: check all files
+         run: ls 
