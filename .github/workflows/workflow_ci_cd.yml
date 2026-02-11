@@ -13,7 +13,7 @@ jobs:
         run:  databricks --version
       - name: create dbx config file
         run:  |
-              cat <<EOF > /.databrickscfg
+              cat <<EOF > ~/.databrickscfg
               [DEFAULT]
               host  = https://dbc-137322c2-693c.cloud.databricks.com/
               token = dapib06dfed29cd4687f07b7f5833a4191d8
