@@ -1,0 +1,16 @@
+resources:
+  jobs:
+    job_run_test_cases:
+      name: job_run_test_cases
+      tasks:
+        - task_key: step_run_test_case
+          spark_python_task:
+            python_file: /Workspace/Shared/proj_dbx_10_02_2026/run_test_cases.py
+          environment_key: Default
+      queue:
+        enabled: true
+      environments:
+        - environment_key: Default
+          spec:
+            environment_version: "4"
+      performance_target: PERFORMANCE_OPTIMIZED
