@@ -16,6 +16,8 @@ jobs:
               host  = https://dbc-137322c2-693c.cloud.databricks.com/
               token = ${{secrets.GITHUB_TOKEN}}
               EOF
+      - name: list files
+        run:  ls
       - name: dev deployment
         run: databricks bundle deploy --target dev
       - name: run test cases
