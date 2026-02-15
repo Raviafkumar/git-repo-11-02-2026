@@ -46,7 +46,8 @@ while True:
     break
     
 respone = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get-output",headers = headers , params = {"run_id":task_run_id}).json()
-#print(respone)
+print(task_run_id)
+print(respone)
     
 
     
