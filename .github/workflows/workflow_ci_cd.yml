@@ -14,12 +14,12 @@ jobs:
               cat <<EOF > ~/.databrickscfg
               [DEFAULT]
               host  = https://dbc-137322c2-693c.cloud.databricks.com/
-              token = "${{secrets.DBX_TOKEN}}"
+              token = ${{secrets.DBX_TOKEN}}
               EOF
       - name: list files
         run:  ls
       - name: dev deployment
         run: databricks bundle deploy --target dev
       - name: run test cases
-        run: python workflow.py ${{secrets.GITHUB_TOKEN}}
+        run: python workflow.py ${{secrets.DBX_TOKEN}}
        
