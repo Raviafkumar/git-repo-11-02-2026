@@ -36,7 +36,7 @@ dbx_url = 'https://dbc-137322c2-693c.cloud.databricks.com'
 
 respone = requests.post(f"{dbx_url}/api/2.2/jobs/runs/submit",json = payload,headers = headers).json()
 run_id = respone["run_id"]
-
+task_run_id = None
 while True:
     respone = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get",headers = headers , params = {"run_id":run_id}).json()
     if respone['state']['life_cycle_state'] == "RUNNING":
@@ -46,7 +46,7 @@ while True:
     break
     
 output = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get-output",headers = headers , params = {"run_id":task_run_id}).json()
-print(task_run_id)
+print(task_run_id,output)
 print(output['logs'])
     
 
