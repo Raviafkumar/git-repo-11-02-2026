@@ -45,9 +45,9 @@ while True:
     task_run_id = respone['tasks'][0]['run_id']
     break
     
-respone = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get-output",headers = headers , params = {"run_id":task_run_id}).json()
+output = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get-output",headers = headers , params = {"run_id":task_run_id}).json()
 print(task_run_id)
-print(respone['notebook_output'])
+print(output)
     
 
     
