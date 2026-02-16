@@ -2,6 +2,7 @@ import requests
 import time 
 import sys
 import json 
+import ast 
 
 
 payload = {
@@ -47,10 +48,20 @@ while True:
     break
     
 output = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get-output",headers = headers , params = {"run_id":task_run_id}).json()
-print(task_run_id)
-print(json.dumps(output,indent = 2))
-# print(output.reverse())
-# #print(output['logs'])
+
+
+parsed_output = {"url":output['metadata']['run_page_url'],
+                 'test_case_result':output['notebook_output']['result']}
+
+print(json.dumps(parsed_output,indent=2))
+
+dict_output = ast.literal_eval(parsed_output['test_case_result'])
+failed_test_cases = [x for x in dict_output if x['test case result'] == 'failed']
+
+if failed_test_cases:
+    for test_case in failed_test_cases:
+        print(f"Below test case failed: {test_case['test case desc']}")
+
     
 
     
