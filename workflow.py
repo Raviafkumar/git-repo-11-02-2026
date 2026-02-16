@@ -9,8 +9,8 @@ payload = {
     {
       "task_key": "step_run_test_case",
       "run_if": "ALL_SUCCESS",
-      "spark_python_task": {
-        "python_file": "/Workspace/Shared/proj_dbx_10_02_2026/run_test_cases.py",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/ravi.af.kumar@gmail.com/test_case",
         "source": "WORKSPACE"
       },
       "timeout_seconds": 0,
