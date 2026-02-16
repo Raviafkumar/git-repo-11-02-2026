@@ -1,6 +1,7 @@
 import requests
 import time 
 import sys
+import json 
 
 
 payload = {
@@ -46,8 +47,10 @@ while True:
     break
     
 output = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get-output",headers = headers , params = {"run_id":task_run_id}).json()
-print(task_run_id,output)
-print(output['logs'])
+print(task_run_id)
+print(json.dumps(output,indent = 2))
+# print(output.reverse())
+# #print(output['logs'])
     
 
     
