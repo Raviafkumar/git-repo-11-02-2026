@@ -25,8 +25,10 @@ jobs:
         id: run-tests
         run: |
               result=$(python workflow.py ${{ secrets.DBX_TOKEN }})
-              echo "test_output=$result " >> $GITHUB_OUTPUT
+              echo "test_output=$result" >> $GITHUB_OUTPUT
+
 
       - name: print test results
         run: echo "Test Results = ${{ steps.run-tests.outputs.test_output }}"
+
        
