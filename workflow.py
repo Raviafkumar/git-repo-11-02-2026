@@ -43,7 +43,6 @@ while True:
     respone = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get",headers = headers , params = {"run_id":run_id}).json()
     if respone['state']['life_cycle_state'] == "RUNNING":
         time.sleep(20)
-    print("job completed successfully")
     task_run_id = respone['tasks'][0]['run_id']
     break
     
