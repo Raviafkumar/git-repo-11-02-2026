@@ -32,7 +32,10 @@ jobs:
               
 
       - name: print test results
-        run: echo "Test Results = ${{ steps.run-tests.outputs.test_output }}"
+        run: |
+             cat <<EOF ${{ steps.run-tests.outputs.test_output }}
+             EOF
+             
 
 
        
