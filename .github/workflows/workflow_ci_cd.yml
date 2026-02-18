@@ -42,10 +42,11 @@ jobs:
                        import ast
                        dict_output = ast.literal_eval(${{ steps.run-tests.outputs.test_output }})
                        failed_test_cases = [x for x in dict_output if x['test case result'] == 'failed']
-                       if failed_test_cases:
-                          for test_case in failed_test_cases:
-                            print(f"Below test case failed: {test_case['test case desc']}")
-                            print(1/0)
+                       print(failed_test_cases)
+                      #  if failed_test_cases:
+                      #     for test_case in failed_test_cases:
+                      #       print(f"Below test case failed: {test_case['test case desc']}")
+                      #       print(1/0)
                       
                     
               EOF
