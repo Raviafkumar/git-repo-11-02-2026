@@ -1,7 +1,6 @@
 name: ci-cd-workflow
 on: workflow_dispatch
-env:
-  result: ""
+
 
 jobs:
   dev:
@@ -24,7 +23,10 @@ jobs:
         run: databricks bundle deploy --target dev
       - name: run test cases
         id: run-tests
-        run: result = $(python workflow.py ${{secrets.DBX_TOKEN}}) >> $GITHUB_OUTPUT
+        run: |
+              result = $(python workflow.py ${{secrets.DBX_TOKEN}})
+              echo "test-output = $result " >> $GITHUB_OUTPUT
+
       - name: print test results
-        run: echo "Test Results = ${{steps.run-tests.outputs.result}}"
+        run: echo "Test Results = ${{steps.run-tests.outputs.test-output}}"
        
