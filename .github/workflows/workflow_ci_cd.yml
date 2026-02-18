@@ -39,10 +39,10 @@ jobs:
       - name: check failed test cases
         run : |
               python << EOF
-                       import ast
-                       dict_output = ast.literal_eval(${{ steps.run-tests.outputs.test_output }})
-                       failed_test_cases = [x for x in dict_output if x['test case result'] == 'failed']
-                       print(failed_test_cases)
+              import ast
+              dict_output = ast.literal_eval(${{ steps.run-tests.outputs.test_output }})
+              failed_test_cases = [x for x in dict_output if x['test case result'] == 'failed']
+              print(failed_test_cases)
                       #  if failed_test_cases:
                       #     for test_case in failed_test_cases:
                       #       print(f"Below test case failed: {test_case['test case desc']}")
