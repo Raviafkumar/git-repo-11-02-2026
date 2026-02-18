@@ -38,7 +38,7 @@ jobs:
              EOF
       - name: check failed test cases
         run : |
-              python >> EOF
+              python << EOF
                        import ast
                        dict_output = ast.literal_eval(${{ steps.run-tests.outputs.test_output }})
                        failed_test_cases = [x for x in dict_output if x['test case result'] == 'failed']
