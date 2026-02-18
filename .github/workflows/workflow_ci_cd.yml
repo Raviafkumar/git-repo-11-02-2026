@@ -29,9 +29,10 @@ jobs:
               echo "test_output<<EOF" >> $GITHUB_OUTPUT
               echo "$output" >> $GITHUB_OUTPUT
               echo "EOF" >> $GITHUB_OUTPUT
+              
 
       - name: print test results
-        run: echo "Test Results = ${{ steps.run-tests.outputs.output }}"
+        run: echo "Test Results = ${{ steps.run-tests.outputs.test_output }}"
 
 
        
