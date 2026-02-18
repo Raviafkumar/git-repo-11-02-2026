@@ -21,31 +21,11 @@ jobs:
         run:  ls
       - name: dev deployment
         run: databricks bundle deploy --target dev
-      - name: run test cases
-        id: run-tests
+      - name: run tests
+        id:   init_test
         run: |
-             echo "test_output<<EOF" >> $GITHUB_OUTPUT
-             python workflow.py ${{ secrets.DBX_TOKEN }} >> $GITHUB_OUTPUT
-             echo "EOF">> $GITHUB_OUTPUT
-
-      - name: print test results
-        run: |
-              echo '${{ steps.run-tests.outputs.test_output }}' > output.json
-              cat output.json
-      # - name: check failed test cases
-      #   run : |
-      #         python << EOF
-      #         import ast
-      #         dict_output = ast.literal_eval(${{ steps.run-tests.outputs.test_output }}['test_case_result'])
-      #         failed_test_cases = [x for x in dict_output if x['test case result'] == 'failed']
-      #         print(failed_test_cases)
-      #                 #  if failed_test_cases:
-      #                 #     for test_case in failed_test_cases:
-      #                 #       print(f"Below test case failed: {test_case['test case desc']}")
-      #                 #       print(1/0)
-                      
-                    
-      #         EOF
+              result=(python workflow.py ${{secrets.DBX_TOKEN}})
+              echo "result=$result" >> $GITHUB_OUTPUT
              
 
 
