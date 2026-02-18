@@ -31,7 +31,7 @@ jobs:
       - name: print test results
         run: |
              cat <<EOF 
-                 "${{ steps.run-tests.outputs.test_output }}"
+             "${{ steps.run-tests.outputs.test_output }}"
              EOF
       # - name: check failed test cases
       #   run : |
