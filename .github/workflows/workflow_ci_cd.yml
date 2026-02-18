@@ -46,8 +46,7 @@ jobs:
                           for test_case in failed_test_cases:
                             print(f"Below test case failed: {test_case['test case desc']}")
                             print(1/0)
-                       else:
-                        pass
+                      
                     
               EOF
              
