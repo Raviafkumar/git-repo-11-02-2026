@@ -64,6 +64,3 @@ print(json.dumps(parsed_output,indent=2))
 
     
 
-    
-    
-
