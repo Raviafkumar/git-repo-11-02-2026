@@ -29,6 +29,7 @@ jobs:
               echo "test_output<<EOF" >> $GITHUB_OUTPUT
               echo "$output" >> $GITHUB_OUTPUT
               echo "EOF" >> $GITHUB_OUTPUT
+              echo "output = $output"
               
 
       - name: print test results
