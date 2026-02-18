@@ -30,7 +30,9 @@ jobs:
 
       - name: print test results
         run: |
-             echo "${{ steps.run-tests.outputs.test_output }}"
+             cat <<EOF 
+                 "${{ steps.run-tests.outputs.test_output }}"
+             EOF
       # - name: check failed test cases
       #   run : |
       #         python << EOF
