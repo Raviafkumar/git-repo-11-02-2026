@@ -21,5 +21,8 @@ jobs:
       - name: dev deployment
         run: databricks bundle deploy --target dev
       - name: run test cases
-        run: python workflow.py ${{secrets.DBX_TOKEN}}
+        id: run-tests
+        run: result = $(python workflow.py ${{secrets.DBX_TOKEN}}) >> $GITHUB_OUTPUT
+      - name: print test results
+        run: echo "Test Results = ${{steps.run-tests.outputs.result}}"
        
