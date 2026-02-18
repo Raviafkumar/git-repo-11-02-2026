@@ -40,7 +40,7 @@ jobs:
         run : |
               python << EOF
               import ast
-              dict_output = ast.literal_eval(f"{${{ steps.run-tests.outputs.test_output }}}")
+              dict_output = ast.literal_eval(f"""{${{ steps.run-tests.outputs.test_output }}}""")
               failed_test_cases = [x for x in dict_output if x['test case result'] == 'failed']
               print(failed_test_cases)
                       #  if failed_test_cases:
