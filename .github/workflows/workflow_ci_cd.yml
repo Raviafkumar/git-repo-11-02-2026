@@ -33,7 +33,8 @@ jobs:
 
       - name: print test results
         run: |
-             cat <<EOF ${{ steps.run-tests.outputs.test_output }}
+             cat <<EOF
+                    ${{ steps.run-tests.outputs.test_output }}
              EOF
              
 
