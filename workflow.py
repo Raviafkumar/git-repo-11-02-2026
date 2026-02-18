@@ -53,7 +53,7 @@ output = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get-output",headers = header
 parsed_output = {"url":output['metadata']['run_page_url'],
                  'test_case_result':output['notebook_output']}
 
-print(parsed_output)
+print(json.dumps(parsed_output,indent=2))
 
 # dict_output = ast.literal_eval(parsed_output['test_case_result'])
 # failed_test_cases = [x for x in dict_output if x['test case result'] == 'failed']
