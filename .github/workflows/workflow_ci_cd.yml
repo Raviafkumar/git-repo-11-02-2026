@@ -24,7 +24,7 @@ jobs:
       - name: run test cases
         id: run-tests
         run: |
-             echo "test_output <<EOF" >> $GITHUB_OUTPUT
+             echo "test_output<<EOF" >> $GITHUB_OUTPUT
              python workflow.py ${{ secrets.DBX_TOKEN }} >> $GITHUB_OUTPUT
              echo "EOF">> $GITHUB_OUTPUT
 
