@@ -8,6 +8,11 @@ jobs:
         uses: actions/checkout@v4
       - name: run test cases
         run:  python workflow.py ${{secrets.DBX_TOKEN}} >output.json
+      - name: upload test case artifact
+        uses: actions/upload-artifact@v6.0.0
+        with:
+          name: test_case_result.json
+          path: output.json
       - name: fail deployment if any test case failed
         run: |
               python - <<EOF
