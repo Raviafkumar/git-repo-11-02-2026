@@ -13,8 +13,9 @@ jobs:
       - name: print dir 
         run: ls
       - name: upload test result artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6.0.0
         with:
+          name: test_case_output.txt
           path: output.json
   dev:
     needs: run_test_case
