@@ -10,14 +10,12 @@ jobs:
         uses: actions/checkout@v4
       - name: run test cases
         run:  python workflow.py ${{secrets.DBX_TOKEN}}
-      - name: print test case result
-        run: |
-              python - <<EOF
-              with open("output.json","r") as f:
-                data = f.readlines()
-              print(data)
-
-              EOF
+      - name: print dir 
+        run: ls
+      - name: upload test result artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: output.json
   dev:
     needs: run_test_case
     runs-on: ubuntu-latest
