@@ -57,7 +57,8 @@ output = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get-output",headers = header
 parsed_output = {"url":output['metadata']['run_page_url'],
                  'test_case_result':output['notebook_output']}
 
-print(json.dumps(parsed_output,indent = 2 ))
+with open('output.json','w') as f:
+    f.write(json.dumps(parsed_output,indent=2))
 
    
 
