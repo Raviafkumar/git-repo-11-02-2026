@@ -9,7 +9,7 @@ jobs:
       - name: download source code
         uses: actions/checkout@v4
       - name: run test cases
-        run:  python workflow.py ${{secrets.DBX_TOKEN}}
+        run:  python workflow.py ${{secrets.DBX_TOKEN}} >output.json
       - name: print dir 
         run: ls
       - name: print result artifact
