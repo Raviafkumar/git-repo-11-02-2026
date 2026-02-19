@@ -15,3 +15,4 @@ README.md
 src/
 fixtures/
 output.json
+test.py
