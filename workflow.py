@@ -60,8 +60,8 @@ parsed_output = {"url":output['metadata']['run_page_url'],
 # if failed_test_cases:
 #     for test_case in failed_test_cases:
 #         print(f"Below test case failed: {test_case['test case desc']}")
-
+print(output)
 with open("output.json","w") as f:
-    f.write(json.dumps(parsed_output,indent = 2 )) 
+    f.write(json.dumps(output,indent = 2 )) 
    
 

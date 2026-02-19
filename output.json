@@ -1,0 +1,7 @@
+{
+  "url": "https://dbc-137322c2-693c.cloud.databricks.com/?o=1933389633836741#job/228301252005148/run/24155428247757",
+  "test_case_result": {
+    "result": "[{'test case desc': 'sum of amount in bronze for year 2026', 'test case result': 'passed'}, {'test case desc': 'sum of amount in silver for year 2026', 'test case result': 'failed'}]",
+    "truncated": false
+  }
+}
