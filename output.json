@@ -1,6 +1,71 @@
 {
-  "url": "https://dbc-137322c2-693c.cloud.databricks.com/?o=1933389633836741#job/228301252005148/run/24155428247757",
-  "test_case_result": {
+  "metadata": {
+    "job_id": 434298005246294,
+    "run_id": 304950467078894,
+    "creator_user_name": "ravi.af.kumar@gmail.com",
+    "number_in_job": 304950467078894,
+    "state": {
+      "life_cycle_state": "TERMINATED",
+      "result_state": "SUCCESS",
+      "state_message": "",
+      "user_cancelled_or_timedout": false
+    },
+    "start_time": 1771479980723,
+    "setup_duration": 2000,
+    "execution_duration": 19000,
+    "cleanup_duration": 0,
+    "end_time": 1771480002324,
+    "run_name": "step_run_test_case",
+    "run_page_url": "https://dbc-137322c2-693c.cloud.databricks.com/?o=1933389633836741#job/434298005246294/run/304950467078894",
+    "run_type": "SUBMIT_RUN",
+    "parent_run_id": 95742902700776,
+    "tasks": [
+      {
+        "run_id": 304950467078894,
+        "task_key": "step_run_test_case",
+        "notebook_task": {
+          "notebook_path": "/Workspace/Users/ravi.af.kumar@gmail.com/test_case",
+          "source": "WORKSPACE"
+        },
+        "environment_key": "Default",
+        "state": {
+          "life_cycle_state": "TERMINATED",
+          "result_state": "SUCCESS",
+          "state_message": "",
+          "user_cancelled_or_timedout": false
+        },
+        "run_page_url": "https://dbc-137322c2-693c.cloud.databricks.com/?o=1933389633836741#job/434298005246294/run/304950467078894",
+        "start_time": 1771479980723,
+        "setup_duration": 2000,
+        "execution_duration": 19000,
+        "cleanup_duration": 0,
+        "end_time": 1771480002324,
+        "attempt_number": 0,
+        "status": {
+          "state": "TERMINATED",
+          "termination_details": {
+            "code": "SUCCESS",
+            "type": "SUCCESS",
+            "message": ""
+          }
+        },
+        "effective_performance_target": "PERFORMANCE_OPTIMIZED"
+      }
+    ],
+    "task_key": "step_run_test_case",
+    "format": "MULTI_TASK",
+    "status": {
+      "state": "TERMINATED",
+      "termination_details": {
+        "code": "SUCCESS",
+        "type": "SUCCESS",
+        "message": ""
+      }
+    },
+    "job_run_id": 95742902700776,
+    "effective_performance_target": "PERFORMANCE_OPTIMIZED"
+  },
+  "notebook_output": {
     "result": "[{'test case desc': 'sum of amount in bronze for year 2026', 'test case result': 'passed'}, {'test case desc': 'sum of amount in silver for year 2026', 'test case result': 'failed'}]",
     "truncated": false
   }

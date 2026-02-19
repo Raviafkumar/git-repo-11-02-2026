@@ -43,8 +43,13 @@ while True:
     respone = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get",headers = headers , params = {"run_id":run_id}).json()
     if respone['state']['life_cycle_state'] == "RUNNING":
         time.sleep(20)
-    task_run_id = respone['tasks'][0]['run_id']
-    break
+    
+    elif respone['state']['life_cycle_state'] in ["SUCCESS","TERMINATED", "SKIPPED", "INTERNAL_ERROR"]:
+        break
+
+    
+task_run_id = respone['tasks'][0]['run_id']
+    
     
 output = requests.get(f"{dbx_url}/api/2.2/jobs/runs/get-output",headers = headers , params = {"run_id":task_run_id}).json()
 
