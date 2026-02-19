@@ -12,7 +12,12 @@ jobs:
         run:  python workflow.py ${{secrets.DBX_TOKEN}}
       - name: print test case result
         run: |
-              cat output.json
+              python - <<EOF
+              with open("output.json","r") as f:
+                data = f.readlines()
+              print(data)
+
+              EOF
   dev:
     needs: run_test_case
     runs-on: ubuntu-latest
