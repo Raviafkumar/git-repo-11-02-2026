@@ -3,7 +3,17 @@ on: workflow_dispatch
 
 
 jobs:
+  run_test_case:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download source code
+        uses: actions/checkout@v4
+      - name: run test cases
+        run:  python workflow.py ${{secrets.DBX_TOKEN}}
+      - name: print test case result
+        run: cat output.json
   dev:
+    needs: run_test_case
     runs-on: ubuntu-latest
     steps:
       - name: download source code
@@ -21,15 +31,8 @@ jobs:
         run:  ls
       - name: dev deployment
         run: databricks bundle deploy --target dev
-      - name: run tests
-        id:   init_test
-        run: |
-              result=$(python workflow.py ${{secrets.DBX_TOKEN}})
-              echo "result=$result" >> $GITHUB_OUTPUT
-      - name: print result
-        run: |
-             echo "Test result are : ${{steps.init_test.outputs.result}}"
+      
+      
              
-
 
        
